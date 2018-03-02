@@ -9,7 +9,17 @@ describe(Brand) do
   end
 
   it("converts the brand name to uppercase") do
-    brand = Brand.create({:brand_name => 'keen'})
+    brand = Brand.create({:brand_name => 'keen', :price => '10'})
     expect(brand.brand_name()).to eq 'Keen'
+  end
+
+  it("validates the presence of name and price") do
+    brand = Brand.new({:brand_name => "", :price => ""})
+    expect(brand.save()).to eq false
+  end
+
+  it("ensures the length of the brand name is at most 100 characters") do
+    brand = Brand.new({:brand_name => "b".*(101)})
+    expect(brand.save()).to eq false
   end
 end
