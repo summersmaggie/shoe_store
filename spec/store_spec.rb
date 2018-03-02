@@ -33,4 +33,9 @@ describe(Store) do
     store2 = Store.new({:store_name => 'old navy', :location => 'Portland', :id => nil})
     expect(store1.save()).to eq false
   end
+
+  it("ensures there is no whitespace in name") do
+    store1 = Store.new({:store_name => 'Nordstrom '})
+    expect(store1.save()).to eq false
+  end
 end

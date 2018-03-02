@@ -11,5 +11,5 @@ group(:test) do
   gem("capybara")
   gem("pry")
   gem("shoulda-matchers", '~> 2.0')
-  gem("money")
+  gem("auto_strip_attributes", "~> 2.3")
 end

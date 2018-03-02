@@ -29,8 +29,8 @@ describe(Brand) do
     expect(brand1.save()).to eq false
   end
 
-  # it("converts price to currency format") do
-  #   brand = Brand.new({:brand_name => 'Keen', :price => '50', :id => nil})
-  #   expect(brand.currency_format_price(50)).to eq '$50.00'
-  # end
+  it("ensures there is no whitespace in name") do
+    brand1 = Brand.new({:brand_name => 'Keen '})
+    expect(brand1.save()).to eq false
+  end
 end
