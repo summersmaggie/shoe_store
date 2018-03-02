@@ -8,3 +8,4 @@ gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'pry'
+gem("shoulda-matchers", '~> 2.0')

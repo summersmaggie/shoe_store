@@ -20,11 +20,6 @@ ActiveRecord::Schema.define(version: 20180302164804) do
     t.integer "price"
   end
 
-  create_table "brands_stores", force: :cascade do |t|
-    t.integer "brand_id"
-    t.integer "store_id"
-  end
-
   create_table "stores", force: :cascade do |t|
     t.string "store_name"
     t.string "location"
