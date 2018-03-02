@@ -11,4 +11,5 @@ group(:test) do
   gem("capybara")
   gem("pry")
   gem("shoulda-matchers", '~> 2.0')
+  gem("money")
 end
