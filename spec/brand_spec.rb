@@ -28,4 +28,5 @@ describe(Brand) do
     brand2 = Brand.new({:brand_name => 'keen', :price => '10'})
     expect(brand1.save()).to eq false
   end
+
 end

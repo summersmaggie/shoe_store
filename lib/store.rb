@@ -3,7 +3,7 @@ class Store < ActiveRecord::Base
   before_save(:titlecase_store_name)
   before_save(:titlecase_location)
   validates(:store_name, {:uniqueness => true, :presence => true, :length => { :maximum => 100 }})
-  validates(:location, {:uniqueness => true, :presence => true})
+  validates(:location, :presence => true)
 
   def titlecase_store_name
     self.store_name=(store_name().titlecase())

@@ -7,4 +7,5 @@ class Brand < ActiveRecord::Base
   def titlecase_brand_name
     self.brand_name=(brand_name().titlecase())
   end
+
 end

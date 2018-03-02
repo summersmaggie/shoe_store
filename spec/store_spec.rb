@@ -29,7 +29,7 @@ describe(Store) do
   end
 
   it("validates there are no duplicates") do
-    store1 = Store.new({:store_name => 'old navy', :location => 'Portland', :id => nil})
+    store1 = Store.new({:store_name => 'old navy', :location => 'New York', :id => nil})
     store2 = Store.new({:store_name => 'old navy', :location => 'Portland', :id => nil})
     expect(store1.save()).to eq false
   end
