@@ -56,3 +56,23 @@ post('/stores/:id') do
   @available_brands = Brand.all() - @store.brands
   erb :store
 end
+
+get('/stores/:id/edit') do
+  @store = Store.find(params.fetch("id").to_i())
+  erb :edit_store
+end
+
+patch('/stores/:id') do
+  store_name = params.fetch('store_name')
+  location = params.fetch('location')
+  @store = Store.find(params.fetch("id").to_i())
+  @store.update({:store_name => store_name, :location => location})
+  @available_brands = Brand.all() - @store.brands
+  erb :store
+end
+
+delete('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i())
+  @store.delete
+  redirect '/stores'
+end

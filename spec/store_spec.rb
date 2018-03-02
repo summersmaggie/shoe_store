@@ -13,4 +13,5 @@ describe(Store) do
   #   store2 = Store.create({:store_name => 'Nordstrom', :location => 'Portland', :id => nil})
   #   expect(Store.all()).to eq [store1, store2]
   # end
+
 end

@@ -1,0 +1,19 @@
+<h2>Update <%= @store.store_name %> Information</h2>
+
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="store_name">Update store name:</label>
+  <input id="store_name" name="store_name" type="text">
+
+  <label for="location">Update location:</label>
+  <input id="location" name="location" type="text">
+
+  <button type="submit" class="button btn-success">Update Store</button>
+</form>
+
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit" class="button btn-danger">Delete Store</button>
+</form>
