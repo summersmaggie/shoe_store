@@ -31,6 +31,12 @@ get('/brands/:id') do
   erb :brand
 end
 
+delete('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i())
+  @brand.delete
+  redirect '/brands'
+end
+
 #stores
 get('/stores/new') do
   erb :store_form

@@ -9,3 +9,9 @@
 <% else %>
   <p>This brand is not available at any stores yet.</p>
 <% end %>
+
+<form action="/brands/<%= @brand.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit" class="button btn-danger">Delete Brand</button>
+</form>
