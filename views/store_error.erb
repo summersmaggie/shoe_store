@@ -1,0 +1,8 @@
+<h3>Uh oh! There's been a mistake: </h3>
+
+<% @store.errors().full_messages().each do |message| %>
+<p><%= message %></p>
+<% end %>
+
+<br>
+<h5><a href="/stores/new">Return to try again.</h5>

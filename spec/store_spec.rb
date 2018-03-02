@@ -13,6 +13,11 @@ describe(Store) do
     expect(store.store_name()).to eq 'Old Navy'
   end
 
+  it("converts location to uppercase") do
+    store = Store.create({:store_name => 'old navy', :location => 'portland', :id => nil})
+    expect(store.location()).to eq 'Portland'
+  end
+
   it("validates the presence of name and location") do
     store = Store.new({:store_name =>  "", :location => ""})
     expect(store.save()).to eq false

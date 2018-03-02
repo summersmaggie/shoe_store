@@ -22,8 +22,12 @@ end
 post('/brands') do
   brand_name = params.fetch('brand_name')
   price = params.fetch('price').to_i
-  brand = Brand.create({:brand_name => brand_name, :price => price})
-  redirect '/brands'
+  @brand = Brand.new({:brand_name => brand_name, :price => price})
+  if @brand.save()
+    redirect '/brands'
+  else
+    erb :brand_error
+  end
 end
 
 get('/brands/:id') do
@@ -50,8 +54,12 @@ end
 post('/stores') do
   store_name = params.fetch('store_name')
   location = params.fetch('location')
-  store = Store.create({:store_name => store_name, :location => location})
-  redirect '/stores'
+  @store = Store.create({:store_name => store_name, :location => location})
+  if @store.save()
+    redirect '/stores'
+  else
+    erb :store_error
+  end
 end
 
 get('/stores/:id') do
