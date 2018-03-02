@@ -46,5 +46,13 @@ end
 get('/stores/:id') do
   @store = Store.find(params.fetch("id").to_i())
   @available_brands = Brand.all() - @store.brands
-  erb(:store)
+  erb :store
+end
+
+post('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i())
+  new_brand = Brand.find(params.fetch("brand_id"))
+  @store.brands.push(new_brand)
+  @available_brands = Brand.all() - @store.brands
+  erb :store
 end

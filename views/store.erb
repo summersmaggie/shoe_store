@@ -1,0 +1,25 @@
+<h2>Store: <%= @store.store_name %></h2>
+
+<h2>Current shoe brands available at this store:</h2>
+
+<% if @store.brands.any? %>
+  <ul>
+    <% @store.brands.each do |brand| %>
+      <li><%= brand.brand_name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This store has no brands yet.</p>
+<% end %>
+
+<h2>Add a new brands to this store!</h2>
+
+<form action="/stores/<%= @store.id() %>" method="post">
+  <div class="form-group">
+    <select name="brand_id">
+      <% @available_brands.each do |brand| %>
+        <option value="<%= brand.id %>"><%= brand.brand_name %></option>
+      <% end %>
+    </select>
+  </div>
+  <button type="submit" class="button btn-success">Add Brand to Store</button>
