@@ -1,0 +1,11 @@
+<h2><%= @brand.brand_name %> is currently available at the following stores:</h2>
+
+<% if @brand.stores.any? %>
+  <ul>
+    <% @brand.stores.each do |store| %>
+      <li><%= store.store_name %> - <%= store.location %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This brand is not available at any stores yet.</p>
+<% end %>

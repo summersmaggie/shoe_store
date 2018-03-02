@@ -1,6 +1,6 @@
-<h2>Store: <%= @store.store_name %></h2>
+<h2>Store: <%= @store.store_name %> - <%= @store.location %></h2>
 
-<h2>Current shoe brands available at this store:</h2>
+<h3>Current shoe brands available at this store:</h3>
 
 <% if @store.brands.any? %>
   <ul>
@@ -12,7 +12,7 @@
   <p>This store has no brands yet.</p>
 <% end %>
 
-<h2>Add a new brands to this store!</h2>
+<h3>Add a new brand to this store!</h3>
 
 <form action="/stores/<%= @store.id() %>" method="post">
   <div class="form-group">

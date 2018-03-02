@@ -26,6 +26,11 @@ post('/brands') do
   redirect '/brands'
 end
 
+get('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i())
+  erb :brand
+end
+
 #stores
 get('/stores/new') do
   erb :store_form

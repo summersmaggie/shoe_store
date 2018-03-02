@@ -4,7 +4,7 @@
 
   <ul>
     <% @brands.each do |brand| %>
-    <li><a href="/brands/<%= brand.id() %>"><%= brand.brand_name() %></a></li>
+    <li><a href="/brands/<%= brand.id() %>"><%= brand.brand_name() %>, <%= brand.price() %> </a></li>
     <% end %>
   </ul>
 
@@ -13,3 +13,6 @@
   <p>There are no brands yet!</p>
 
 <% end %>
+
+<br>
+<h5><a href="/brands/new"><em>Add a New Brand</em></a></h5>
