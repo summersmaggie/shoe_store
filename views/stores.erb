@@ -1,0 +1,15 @@
+<h2>Current Shoe Stores:</h2>
+
+<% if @stores.any?() %>
+
+  <ul>
+    <% @stores.each do |store| %>
+    <li><a href="/stores/<%= store.id() %>"><%= store.store_name() %>, <%= store.location() %></a></li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <p>There are no stores yet!</p>
+
+<% end %>
