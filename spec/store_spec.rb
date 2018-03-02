@@ -10,12 +10,12 @@ describe(Store) do
 
   it("converts the store name to uppercase") do
     store = Store.create({:store_name => 'old navy', :location => 'Portland', :id => nil})
-    expect(store.store_name()).to eq 'Old Navy'
+    expect(store.titlecase_store_name()).to eq 'Old Navy'
   end
 
   it("converts location to uppercase") do
     store = Store.create({:store_name => 'old navy', :location => 'portland', :id => nil})
-    expect(store.location()).to eq 'Portland'
+    expect(store.titlecase_location()).to eq 'Portland'
   end
 
   it("validates the presence of name and location") do
@@ -26,5 +26,11 @@ describe(Store) do
   it("ensures the length of the store name is at most 100 characters") do
     store = Store.new({:store_name => "s".*(101)})
     expect(store.save()).to eq false
+  end
+
+  it("validates there are no duplicates") do
+    store1 = Store.new({:store_name => 'old navy', :location => 'Portland', :id => nil})
+    store2 = Store.new({:store_name => 'old navy', :location => 'Portland', :id => nil})
+    expect(store1.save()).to eq false
   end
 end
