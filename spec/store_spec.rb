@@ -12,4 +12,14 @@ describe(Store) do
     store = Store.create({:store_name => 'old navy', :location => 'Portland', :id => nil})
     expect(store.store_name()).to eq 'Old Navy'
   end
+
+  it("validates the presence of name and location") do
+    store = Store.new({:store_name =>  "", :location => ""})
+    expect(store.save()).to eq false
+  end
+
+  it("ensures the length of the store name is at most 100 characters") do
+    store = Store.new({:store_name => "s".*(101)})
+    expect(store.save()).to eq false
+  end
 end
