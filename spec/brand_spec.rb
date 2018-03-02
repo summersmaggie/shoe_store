@@ -8,9 +8,8 @@ describe(Brand) do
     expect(test_brand.brand_name).to eq 'Keen'
   end
 
-  # it("returns all brands") do
-  #   brand1 = Brand.create({:brand_name => 'Keen', :price => '50', :id => nil})
-  #   brand2 = Brand.create({:brand_name => 'Nordstrom', :price => '50', :id => nil})
-  #   expect(Brand.all()).to eq [brand1, brand2]
-  # end
+  it("converts the brand name to uppercase") do
+    brand = Brand.create({:brand_name => 'keen'})
+    expect(brand.brand_name()).to eq 'Keen'
+  end
 end

@@ -8,10 +8,8 @@ describe(Store) do
     expect(test_store.store_name).to eq 'Old Navy'
   end
 
-  # it("returns all stores") do
-  #   store1 = Store.create({:store_name => 'Old Navy', :location => 'Portland', :id => nil})
-  #   store2 = Store.create({:store_name => 'Nordstrom', :location => 'Portland', :id => nil})
-  #   expect(Store.all()).to eq [store1, store2]
-  # end
-
+  it("converts the store name to uppercase") do
+    store = Store.create({:store_name => 'old navy', :location => 'Portland', :id => nil})
+    expect(store.store_name()).to eq 'Old Navy'
+  end
 end
