@@ -1,10 +1,9 @@
-require("sinatra")
-require("sinatra/reloader")
-require("sinatra/activerecord")
-also_reload("lib/**/*.rb")
-require("./lib/brand")
-require("./lib/store")
-require("pry")
+require("bundler/setup")
+require('pry')
+Bundler.require(:default)
+
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+
 
 get('/') do
   erb(:home)
@@ -42,4 +41,10 @@ post('/stores') do
   location = params.fetch('location')
   store = Store.create({:store_name => store_name, :location => location})
   redirect '/stores'
+end
+
+get('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i())
+  @available_brands = Brand.all() - @store.brands
+  erb(:store)
 end
