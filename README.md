@@ -10,25 +10,25 @@ _This app allows a user to add, update and delete shoe stores and shoe brands to
 
 ### Specifications
     1. User adds new shoe store to database
-      * _Example input - "Add Store: Store Name: Nordstrom Location: Portland"_
-      * _Example output - "Shoe Stores: Nordstrom, Portland"_
+      * Example input - "Add Store: Store Name: Nordstrom Location: Portland"
+      * Example output - "Shoe Stores: Nordstrom, Portland"
 
     2. User adds new shoe brand to database
-      * _Example input - "Add Shoe Brand: Brand Name: Lucky Brand Price: 50"_
-      * _Example output - "Shoe Brands: Lucky Brand, $50"_
+      * Example input - "Add Shoe Brand: Brand Name: Lucky Brand Price: 50"
+      * Example output - "Shoe Brands: Lucky Brand, $50"
 
     3. User views shoe stores
-      * _Example output - "Shoe Stores: 'Nordstrom, Portland', 'REI, Portland', 'Aldo, Nashville'"_
+      * Example output - "Shoe Stores: 'Nordstrom, Portland', 'REI, Portland', 'Aldo, Nashville'"
 
     4. User views shoe stores
-      * _Example output - "Shoe Brands: 'Lucky Brand, $50', 'Keen, $100', 'Converse, $40'"_
+      * Example output - "Shoe Brands: 'Lucky Brand, $50', 'Keen, $100', 'Converse, $40'"
 
     5. User adds shoe brands to store
-      * _Example action - "Add 'Aldo' to 'Nordstrom'"_
-      * _Example output - "Shoe brands available at Nordstrom: Aldo."_
+      * Example action - "Add 'Aldo' to 'Nordstrom'"
+      * Example output - "Shoe brands available at Nordstrom: Aldo."
 
     6. User views which shoe brands are available at a store.
-      * _Example output - "Aldo is available at the following stores: Nordstrom"_
+      * Example output - "Aldo is available at the following stores: Nordstrom"
 
 ## Install the DATABASE instructions
 
